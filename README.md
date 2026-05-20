@@ -1,109 +1,146 @@
-# AI Research Projects Portfolio
+# Smart Finance Dashboard
 
-This repository contains a collection of Artificial Intelligence and Machine Learning projects focused on research analysis, knowledge representation, and healthcare prediction.
-
-The projects demonstrate practical applications of data analysis, machine learning, and graph-based modeling using Python.
-
----
-
-# Projects Included
-
-## 1. AI Research Trend Analyzer
-
-This project analyzes academic research paper datasets to identify emerging trends in Artificial Intelligence research.
-
-### Features
-
-* Processes research paper metadata
-* Identifies trending AI research domains
-* Generates visual graphs of research trends
-
-### Technologies Used
-
-* Python
-* Pandas
-* Matplotlib
-
-### Folder
-
-research_trend_analyzer/
+A full-stack Smart Finance Dashboard web application built using React, Node.js, Express, and MongoDB Atlas.  
+This project helps users track expenses, monitor monthly budgets, visualize spending analytics, and manage personal finances efficiently.
 
 ---
 
-## 2. Research Paper Knowledge Graph Generator
+# Features
 
-This project builds a knowledge graph representing relationships between different AI research domains using research paper metadata.
-
-### Features
-
-* Extracts research topics from paper datasets
-* Creates connections between related AI domains
-* Visualizes relationships using a network graph
-
-### Technologies Used
-
-* Python
-* Pandas
-* NetworkX
-* Matplotlib
-
-### Folder
-
-knowledge_graph_generator/
+- Add Expenses
+- Delete Expenses
+- Monthly Budget Tracking
+- Remaining Balance Calculation
+- Expense Analytics using Pie Charts
+- Dark Mode Toggle
+- CSV Upload UI
+- Responsive User Interface
+- Full Stack Deployment
 
 ---
 
-## 3. Uncertainty-Aware AI for Medical Diagnosis
+# Tech Stack
 
-This project develops a machine learning model that predicts diabetes risk using medical data and estimates prediction confidence.
+## Frontend
+- React.js
+- Axios
+- Recharts
+- CSS
 
-### Features
+## Backend
+- Node.js
+- Express.js
 
-* Loads medical dataset
-* Trains machine learning model
-* Predicts diabetes risk
-* Provides prediction confidence scores
+## Database
+- MongoDB Atlas
 
-### Technologies Used
-
-* Python
-* Pandas
-* Scikit-learn
-* Machine Learning
-
-### Algorithm
-
-Random Forest Classifier
-
-### Folder
-
-uncertainty_medical_ai/
+## Deployment
+- Vercel (Frontend)
+- Render (Backend)
 
 ---
 
-# Technologies Used
+# Folder Structure
 
-* Python
-* Pandas
-* Matplotlib
-* NetworkX
-* Scikit-learn
-* Machine Learning
-* Data Analysis
+smart-finance-dashboard/
+│
+├── client/
+│ ├── src/
+│ ├── public/
+│ └── package.json
+│
+├── server/
+│ ├── routes/
+│ ├── models/
+│ ├── controllers/
+│ └── server.js
+│
+└── README.md
 
 ---
 
-# Applications
+# Installation
 
-These projects demonstrate how Artificial Intelligence can be applied to:
+## Clone Repository
 
-* Research trend analysis
-* Knowledge graph generation
-* Machine learning in healthcare
-* Data-driven insights from large datasets
+```bash
+git clone YOUR_GITHUB_REPOSITORY_LINK
+```
+
+---
+
+# Frontend Setup
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+---
+
+# Backend Setup
+
+```bash
+cd server
+npm install
+node server.js
+```
+
+---
+
+# Environment Variables
+
+Create a `.env` file inside the `server` folder and add:
+
+```env
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+```
+
+---
+
+# Live Demo
+
+## Frontend
+Paste your Vercel frontend link here
+
+Example:
+https://smart-finance-dashboard.vercel.app
+
+---
+
+## Backend
+Paste your Render backend link here
+
+Example:
+https://smart-finance-dashboard.onrender.com
+
+---
+
+# Screenshots
+
+Add screenshots of your project here.
+
+---
+
+# Future Improvements
+
+- User Authentication
+- Real CSV Data Upload
+- Expense Categories
+- Export Reports
+- AI Financial Insights
+- Mobile App Version
 
 ---
 
 # Author
 
-AI Research Portfolio developed as part of learning Artificial Intelligence and Machine Learning concepts.
+Archupola
+
+---
+
+# License
+
+This project is open source and available under the MIT License.
