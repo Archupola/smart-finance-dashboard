@@ -1,91 +1,49 @@
-const multer = require("multer");
-
-const path = require("path");
-
-const fs = require("fs");
-
 const express = require("express");
-
 const router = express.Router();
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "uploads/");
-  },
+const Expense = require("../models/Expense");
 
-  filename: (req, file, cb) => {
-    cb(
-      null,
-      Date.now() +
-        path.extname(file.originalname)
-    );
-  },
+/* GET ALL EXPENSES */
+router.get("/", async (req, res) => {
+  try {
+    const expenses = await Expense.find();
+
+    res.json(expenses);
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
+  }
 });
 
-const upload = multer({ storage });
+/* ADD EXPENSE */
+router.post("/", async (req, res) => {
+  try {
+    const newExpense = new Expense(req.body);
 
+    await newExpense.save();
 
-const {
-  getExpenses,
-  addExpense,
-  deleteExpense,
-  updateExpense,
-} = require("../controllers/expenseController");
-
-router.get("/", getExpenses);
-
-router.post("/", addExpense);
-
-router.delete("/:id", deleteExpense);
-
-router.put("/:id", updateExpense);
-
-router.post(
-  "/upload",
-  upload.single("file"),
-  async (req, res) => {
-
-    const results = [];
-
-    const csv = require("csv-parser");
-
-    const Expense = require("../models/Expense");
-
-    fs.createReadStream(req.file.path)
-
-      .pipe(csv())
-
-      .on("data", (data) => {
-        results.push(data);
-      })
-
-      .on("end", async () => {
-
-        try {
-
-          for (const item of results) {
-
-            await Expense.create({
-              title: item.title,
-              amount: Number(item.amount),
-              category: item.category,
-            });
-
-          }
-
-          res.json({
-            message:
-              "CSV data imported successfully",
-          });
-
-        } catch (error) {
-
-          res.status(500).json({
-            message: error.message,
-          });
-
-        }
-      });
+    res.status(201).json(newExpense);
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
   }
-);
+});
+
+/* DELETE EXPENSE */
+router.delete("/:id", async (req, res) => {
+  try {
+    await Expense.findByIdAndDelete(req.params.id);
+
+    res.json({
+      message: "Expense deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).json({
+      error: error.message,
+    });
+  }
+});
+
 module.exports = router;
