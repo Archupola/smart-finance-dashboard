@@ -120,7 +120,17 @@ https://smart-finance-dashboard.onrender.com
 
 # Screenshots
 
-Add screenshots of your project here.
+## Dashboard
+![Dashboard](./screenshots/dashboard.png)
+
+## Dark Mode
+![Dark Mode](./screenshots/darkmode.png)
+
+## Analytics
+![Analytics](./screenshots/analytics.png)
+
+## Expense List
+![Expense List](./screenshots/expenses.png)
 
 ---
 
