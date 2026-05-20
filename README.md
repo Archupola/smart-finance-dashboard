@@ -1,21 +1,18 @@
 # Smart Finance Dashboard
 
-A full-stack Smart Finance Dashboard web application built using React, Node.js, Express, and MongoDB Atlas.  
-This project helps users track expenses, monitor monthly budgets, visualize spending analytics, and manage personal finances efficiently.
+A full-stack finance management web application that helps users track expenses, monitor budgets, visualize analytics, and upload CSV files for expense management.
 
 ---
 
 # Features
 
-- Add Expenses
-- Delete Expenses
-- Monthly Budget Tracking
-- Remaining Balance Calculation
-- Expense Analytics using Pie Charts
-- Dark Mode Toggle
-- CSV Upload UI
-- Responsive User Interface
-- Full Stack Deployment
+- Add and manage expenses
+- Monthly budget tracking
+- Expense analytics with charts
+- Dark mode support
+- CSV upload support
+- Responsive UI
+- MongoDB database integration
 
 ---
 
@@ -23,6 +20,7 @@ This project helps users track expenses, monitor monthly budgets, visualize spen
 
 ## Frontend
 - React.js
+- Vite
 - Axios
 - Recharts
 - CSS
@@ -30,13 +28,8 @@ This project helps users track expenses, monitor monthly budgets, visualize spen
 ## Backend
 - Node.js
 - Express.js
-
-## Database
-- MongoDB Atlas
-
-## Deployment
-- Vercel (Frontend)
-- Render (Backend)
+- MongoDB
+- Mongoose
 
 ---
 
@@ -44,18 +37,11 @@ This project helps users track expenses, monitor monthly budgets, visualize spen
 
 smart-finance-dashboard/
 │
-├── client/
-│ ├── src/
-│ ├── public/
-│ └── package.json
-│
-├── server/
-│ ├── routes/
-│ ├── models/
-│ ├── controllers/
-│ └── server.js
-│
-└── README.md
+├── client/ # Frontend
+├── server/ # Backend
+├── screenshots/
+├── README.md
+└── package.json
 
 ---
 
@@ -64,10 +50,9 @@ smart-finance-dashboard/
 ## Clone Repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_LINK
+git clone https://github.com/Archupola/smart-finance-dashboard.git
+cd smart-finance-dashboard
 ```
-
----
 
 # Frontend Setup
 
@@ -77,21 +62,19 @@ npm install
 npm run dev
 ```
 
----
-
 # Backend Setup
 
 ```bash
 cd server
 npm install
-node server.js
+npm start
 ```
 
 ---
 
 # Environment Variables
 
-Create a `.env` file inside the `server` folder and add:
+Create a `.env` file inside the server folder:
 
 ```env
 MONGO_URI=your_mongodb_connection_string
@@ -103,54 +86,46 @@ PORT=5000
 # Live Demo
 
 ## Frontend
-Paste your Vercel frontend link here
 
-Example:
-https://smart-finance-dashboard.vercel.app
+https://smart-finance-dashboard-new.vercel.app/
 
 ---
 
 ## Backend
-Paste your Render backend link here
 
-Example:
-https://smart-finance-dashboard.onrender.com
+https://smart-finance-dashboard-uwfm.onrender.com/
 
 ---
 
 # Screenshots
 
 ## Dashboard
-![Dashboard](./screenshots/dashboard.png)
+![Dashboard](screenshots/dashboard.png)
 
 ## Dark Mode
-![Dark Mode](./screenshots/darkmode.png)
+![Dark Mode](screenshots/darkmode.png)
 
 ## Analytics
-![Analytics](./screenshots/analytics.png)
+![Analytics](screenshots/analytics.png)
 
 ## Expense List
-![Expense List](./screenshots/expenses.png)
+![Expense List](screenshots/expenses.png)
 
 ---
 
 # Future Improvements
 
-- User Authentication
-- Real CSV Data Upload
-- Expense Categories
-- Export Reports
-- AI Financial Insights
-- Mobile App Version
+- User authentication
+- AI-based expense insights
+- Export reports as PDF
+- Multi-user support
+- Mobile responsiveness improvements
 
 ---
 
 # Author
 
-Archupola
+Archana Pola
 
----
-
-# License
-
-This project is open source and available under the MIT License.
+GitHub:
+https://github.com/Archupola
