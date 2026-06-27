@@ -11,10 +11,11 @@ function Navbar({
   );
 
   const logout = () => {
-  localStorage.removeItem("user");
+    localStorage.removeItem("user");
+    navigate("/login", { replace: true });
+  };
 
-  window.location.href = "/login";
-};
+  
   return (
     <nav
       className={
