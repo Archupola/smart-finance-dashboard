@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 function Navbar({
   darkMode,
   setDarkMode,
+  setUser,
 }) {
   const navigate = useNavigate();
 
@@ -12,10 +13,14 @@ function Navbar({
 
   const logout = () => {
     localStorage.removeItem("user");
+
+    // Update React state
+    setUser(null);
+
+    // Go to login page
     navigate("/login", { replace: true });
   };
 
-  
   return (
     <nav
       className={
@@ -26,10 +31,7 @@ function Navbar({
     >
       <div className="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
 
-        {/* Left */}
-
         <div>
-
           <h1
             className={
               darkMode
@@ -49,10 +51,7 @@ function Navbar({
           >
             Track • Analyze • Grow
           </p>
-
         </div>
-
-        {/* Right */}
 
         <div className="flex items-center gap-4">
 
