@@ -1,131 +1,219 @@
-# Smart Finance Dashboard
+# 💰 Smart Finance Dashboard
 
-A full-stack finance management web application that helps users track expenses, monitor budgets, visualize analytics, and upload CSV files for expense management.
+A modern full-stack **MERN Finance Management Application** that helps users securely manage their income and expenses, visualize spending patterns, and track their financial health through an interactive dashboard.
 
----
-
-# Features
-
-- Add and manage expenses
-- Monthly budget tracking
-- Expense analytics with charts
-- Dark mode support
-- CSV upload support
-- Responsive UI
-- MongoDB database integration
+The application features **JWT Authentication**, **user-specific data isolation**, **interactive charts**, **CSV Import/Export**, and a **responsive UI with Dark Mode**.
 
 ---
 
-# Tech Stack
+## 🚀 Live Demo
+
+### 🌐 Frontend
+**https://smart-finance-dashboard-2138.vercel.app**
+
+### ⚙️ Backend API
+**https://smart-finance-dashboard-api.onrender.com**
+
+---
+
+# ✨ Features
+
+### 🔐 Authentication
+- Secure User Registration
+- User Login
+- JWT Authentication
+- Protected Routes
+- Password Hashing using bcrypt
+- Logout Functionality
+- User-specific Dashboard
+
+---
+
+### 💰 Expense Management
+- Add Income
+- Add Expenses
+- Edit Transactions
+- Delete Transactions
+- Category Management
+- Search Transactions
+- Filter by Category
+- Pagination
+
+---
+
+### 📊 Dashboard Analytics
+- Total Income
+- Total Expenses
+- Remaining Balance
+- Savings Percentage
+- Monthly Budget
+- Total Transactions
+- Interactive Pie Charts
+
+---
+
+### 📁 Data Management
+- CSV Export
+- CSV Import
+- MongoDB Atlas Cloud Database
+
+---
+
+### 🎨 User Experience
+- Fully Responsive Design
+- Dark Mode
+- Clean Dashboard UI
+- Loading Spinner
+- Protected Dashboard
+- Modern Card-based Layout
+
+---
+
+# 🛠️ Tech Stack
 
 ## Frontend
 - React.js
 - Vite
+- Tailwind CSS
+- React Router DOM
 - Axios
 - Recharts
-- CSS
 
 ## Backend
 - Node.js
 - Express.js
-- MongoDB
+- MongoDB Atlas
 - Mongoose
+- JWT Authentication
+- bcrypt.js
+
+## Deployment
+- Vercel
+- Render
+- MongoDB Atlas
 
 ---
 
-# Folder Structure
+# 📂 Folder Structure
 
-smart-finance-dashboard/
+```text
+smart-finance-dashboard
 │
-├── client/ # Frontend
-├── server/ # Backend
-├── screenshots/
-├── README.md
-└── package.json
+├── client
+│   ├── src
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── services
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── package.json
+│   └── vite.config.js
+│
+├── server
+│   ├── config
+│   ├── controllers
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   ├── server.js
+│   └── package.json
+│
+└── README.md
+```
 
 ---
 
-# Installation
+# ⚙️ Installation
 
-## Clone Repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/Archupola/smart-finance-dashboard.git
-cd smart-finance-dashboard
 ```
 
-# Frontend Setup
+## Frontend
 
 ```bash
 cd client
+
 npm install
+
 npm run dev
 ```
 
-# Backend Setup
+## Backend
 
 ```bash
 cd server
+
 npm install
+
 npm start
 ```
 
 ---
 
-# Environment Variables
+# 🔑 Environment Variables
 
-Create a `.env` file inside the server folder:
+Create a `.env` file inside the **server** folder.
 
 ```env
-MONGO_URI=your_mongodb_connection_string
 PORT=5000
+
+MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_secret_key
 ```
 
 ---
 
-# Live Demo
+# 🔒 Security
 
-## Frontend
-
-https://smart-finance-dashboard-new.vercel.app/
-
----
-
-## Backend
-
-https://smart-finance-dashboard-uwfm.onrender.com/
+- JWT Authentication
+- Password Hashing using bcrypt
+- Protected Backend Routes
+- User-specific Transactions
+- MongoDB Atlas Cloud Database
 
 ---
 
-# Screenshots
+# 🚀 Future Enhancements
 
-## Dashboard
-![Dashboard](screenshots/dashboard.png)
-
-## Dark Mode
-![Dark Mode](screenshots/darkmode.png)
-
-## Analytics
-![Analytics](screenshots/analytics.png)
-
-## Expense List
-![Expense List](screenshots/expenses.png)
+- AI-powered Spending Insights
+- Monthly Financial Reports
+- Budget Alerts
+- Recurring Transactions
+- PDF Export
+- OCR Receipt Scanner
+- Mobile Application
+- Expense Forecasting
 
 ---
 
-# Future Improvements
+# 📈 Project Highlights
 
-- User authentication
-- AI-based expense insights
-- Export reports as PDF
-- Multi-user support
-- Mobile responsiveness improvements
+- Full-stack MERN Application
+- Secure Authentication using JWT
+- RESTful API Architecture
+- Responsive UI
+- Interactive Financial Dashboard
+- Cloud Deployment using Render & Vercel
+- MongoDB Atlas Integration
+- CRUD Operations
+- CSV Import & Export
+- Dark Mode Support
 
 ---
 
-# Author
+# 👩‍💻 Author
 
-Archana Pola
+**Archana Pola**
 
-GitHub:
-https://github.com/Archupola
+GitHub: https://github.com/Archupola
+
+
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
