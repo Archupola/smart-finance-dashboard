@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import API from "../services/api";
 import LoadingSpinner from "../components/LoadingSpinner";
 
-function Signup() {
+function Signup({ setUser }) {
+  const navigate = useNavigate();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,7 +26,12 @@ function Signup() {
 
       localStorage.setItem("user", JSON.stringify(data));
 
-      window.location.href = "/";
+      // Update React state
+      setUser(data);
+
+      // Navigate to dashboard
+      navigate("/", { replace: true });
+
     } catch (error) {
       alert(error.response?.data?.message || "Signup Failed");
     } finally {
@@ -56,7 +63,7 @@ function Signup() {
           type="text"
           placeholder="Full Name"
           value={name}
-          onChange={(e)=>setName(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
           className="w-full border border-gray-300 rounded-xl p-4 mb-5"
           required
         />
@@ -65,7 +72,7 @@ function Signup() {
           type="email"
           placeholder="Email"
           value={email}
-          onChange={(e)=>setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           className="w-full border border-gray-300 rounded-xl p-4 mb-5"
           required
         />
@@ -74,7 +81,7 @@ function Signup() {
           type="password"
           placeholder="Password"
           value={password}
-          onChange={(e)=>setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
           className="w-full border border-gray-300 rounded-xl p-4 mb-6"
           required
         />

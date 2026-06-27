@@ -11,22 +11,16 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
 function App() {
-  const user = JSON.parse(
-    localStorage.getItem("user")
+  const [user, setUser] = useState(
+    JSON.parse(localStorage.getItem("user"))
   );
 
   const [darkMode, setDarkMode] = useState(() => {
-    return (
-      localStorage.getItem("darkMode") ===
-      "true"
-    );
+    return localStorage.getItem("darkMode") === "true";
   });
 
   useEffect(() => {
-    localStorage.setItem(
-      "darkMode",
-      darkMode
-    );
+    localStorage.setItem("darkMode", darkMode);
   }, [darkMode]);
 
   return (
@@ -41,18 +35,16 @@ function App() {
         <Navbar
           darkMode={darkMode}
           setDarkMode={setDarkMode}
+          setUser={setUser}
         />
       )}
 
       <Routes>
-
         <Route
           path="/"
           element={
             user ? (
-              <Dashboard
-                darkMode={darkMode}
-              />
+              <Dashboard darkMode={darkMode} />
             ) : (
               <Navigate to="/login" replace />
             )
@@ -67,6 +59,7 @@ function App() {
             ) : (
               <Login
                 darkMode={darkMode}
+                setUser={setUser}
               />
             )
           }
@@ -80,11 +73,11 @@ function App() {
             ) : (
               <Signup
                 darkMode={darkMode}
+                setUser={setUser}
               />
             )
           }
         />
-
       </Routes>
     </div>
   );

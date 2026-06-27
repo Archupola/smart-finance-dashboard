@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import API from "../services/api";
 import LoadingSpinner from "../components/LoadingSpinner";
 
-function Login() {
+function Login({ setUser }) {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -21,7 +23,12 @@ function Login() {
 
       localStorage.setItem("user", JSON.stringify(data));
 
-      window.location.href = "/";
+      // Update React state
+      setUser(data);
+
+      // Navigate to dashboard
+      navigate("/", { replace: true });
+
     } catch (error) {
       alert(error.response?.data?.message || "Login Failed");
     } finally {
@@ -53,7 +60,7 @@ function Login() {
           type="email"
           placeholder="Email"
           value={email}
-          onChange={(e)=>setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
           className="w-full border border-gray-300 rounded-xl p-4 mb-5"
           required
         />
@@ -62,7 +69,7 @@ function Login() {
           type="password"
           placeholder="Password"
           value={password}
-          onChange={(e)=>setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
           className="w-full border border-gray-300 rounded-xl p-4 mb-6"
           required
         />
